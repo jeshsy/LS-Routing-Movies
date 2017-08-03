@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMovies } from '../actions';
+import { Route, Link } from 'react-router-dom';
+import MovieDetails from './MovieDetails';
 
 import { Card, CardHeader, CardBlock, Button, CardTitle, CardText, Row, Col } from 'reactstrap'
 
@@ -23,10 +25,14 @@ class ShowMovies extends Component {
                     <Card block inverse color='primary'>
                       <CardHeader>Movie</CardHeader>
                       <CardBlock>
-                        <CardTitle>{movie.title}</CardTitle>
-                        <CardText> {`Director: ${movie.director}`}</CardText>
+                        <CardTitle>
+                          <Link to ={`/movies/${movie.id}`} component={MovieDetails}>
+                            {movie.title}
+                          </Link>
+                        </CardTitle>
+{/*                        <CardText> {`Director: ${movie.director}`}</CardText>
                         <CardText> {`Actors: ${movie.stars}`}</CardText>
-                        <CardText> {`metascore: ${movie.metascore}`}</CardText>
+                        <CardText> {`metascore: ${movie.metascore}`}</CardText>  */}
                       </CardBlock>
                     </Card>
                   </Col>

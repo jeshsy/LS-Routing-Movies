@@ -6,3 +6,12 @@ export const moviesReducer = (state = [], action) => {
     return state;
   }
 }
+
+export const moviesIdReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'GET_ID':
+      return action.payload.data;
+    default:
+    return state;
+  }
+}
