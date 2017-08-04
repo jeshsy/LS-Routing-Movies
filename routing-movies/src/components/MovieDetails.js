@@ -2,32 +2,36 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getId } from '../actions';
 
-import { Card, CardHeader, CardBlock, Button, CardTitle, CardText, Row, Col } from 'reactstrap'
+import { Card, CardHeader, CardBlock, CardTitle, CardText, Row, Col } from 'reactstrap'
 
 class MovieDetails extends Component {
-  constructor() {
-    super();
-  }
-  
+
   componentDidMount() {
-    this.props.getId(this.props.params.id);
+    this.props.getId(this.props.match.params.id);
+    console.log(this.props)
+
   }
-  
+
   render() {
-    if (this.props.moviesId === null) return null; 
+    console.log(this.props)
+    if (this.props.moviesId === null) return (
+      <div>hello</div>
+    )
     return (
       <div className='container'>
         <Row>
-          <Col md='4' xs='12'>
-            <Card block inverse color='primary'>
-              <CardHeader>Movie</CardHeader>
-              <CardBlock>
-                <CardTitle>{this.props.moviesId.title}</CardTitle>
-                <CardText> {`Director: ${this.props.moviesId.director}`}</CardText>
-                <CardText> {`Actors: ${this.props.moviesId.stars}`}</CardText>
-                <CardText> {`metascore: ${this.props.moviesId.metascore}`}</CardText>
-              </CardBlock>
-            </Card>
+          <Col xs='12'>
+          <center>
+              <Card block inverse color='primary'>
+                <CardHeader class="singlemovie">Movie</CardHeader>
+                <CardBlock class="singlemovie">
+                  <CardTitle>{this.props.moviesId.title}</CardTitle>
+                  <CardTitle> {`Director: ${this.props.moviesId.director}`}</CardTitle>
+                  <CardTitle> {`Actors: ${this.props.moviesId.stars}`}</CardTitle>
+                  <CardTitle> {`metascore: ${this.props.moviesId.metascore}`}</CardTitle>
+                </CardBlock>
+              </Card>
+            </center>
           </Col>
         </Row>
       </div>
@@ -40,12 +44,6 @@ const mapStateToProps = (state) => {
     moviesId: state.moviesId,
   }
 }
-
-// const mapDispatchToProps = (state) => {
-//   return {
-//
-//   }
-// }
 
 export default connect(mapStateToProps, { getId })(MovieDetails);
 // export default ShowMovies;
