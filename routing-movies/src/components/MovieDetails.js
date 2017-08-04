@@ -8,6 +8,8 @@ class MovieDetails extends Component {
 
   componentDidMount() {
     this.props.getId(this.props.match.params.id);
+    console.log(this.props)
+
   }
 
   render() {
@@ -18,8 +20,8 @@ class MovieDetails extends Component {
     return (
       <div className='container'>
         <div>
-          <h1>{this.props.selectedMovie.title}</h1>
-          <h3>MetaScore: {this.props.selectedMovie.metascore}</h3>
+          <h1>Movie:{this.props.moviesId.title}</h1>
+          <h3>MetaScore: {this.props.moviesId.metascore}</h3>
         </div>
         {/* <Row>
           <Col md='4' xs='12'>

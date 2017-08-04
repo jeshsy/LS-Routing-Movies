@@ -27,8 +27,8 @@ ReactDOM.render(
       <Navigation />
       <Route  exact path='/' component={Home} />
       <Route  exact path='/movies' component={ShowMovies} />
-      <Route  path='movies/:id' component={MovieDetails} />
-    </div>
+      <Route  path='/movies/:id' component={MovieDetails} />
+      </div>
     </Router>
   </Provider>
   , document.getElementById('root'));
