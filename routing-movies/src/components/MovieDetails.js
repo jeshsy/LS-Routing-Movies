@@ -17,7 +17,11 @@ class MovieDetails extends Component {
     )
     return (
       <div className='container'>
-        <Row>
+        <div>
+          <h1>{this.props.selectedMovie.title}</h1>
+          <h3>MetaScore: {this.props.selectedMovie.metascore}</h3>
+        </div>
+        {/* <Row>
           <Col md='4' xs='12'>
             <Card block inverse color='primary'>
               <CardHeader>Movie</CardHeader>
@@ -29,7 +33,7 @@ class MovieDetails extends Component {
               </CardBlock>
             </Card>
           </Col>
-        </Row>
+        </Row> */}
       </div>
     )
   }

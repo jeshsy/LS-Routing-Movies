@@ -13,26 +13,33 @@ class ShowMovies extends Component {
   render() {
     return (
       <div className='container'>
-        <Row>
+        {/* <Row> */}
+        <ul>
           {
             this.props.movies.map((movie, index) => {
               return (
-                <Col md='4' xs='12' key={index}>
-                  <Card block inverse color='primary'>
-                    <CardHeader>Movie</CardHeader>
-                    <CardBlock>
-                      <CardTitle>
-                        <Link to={`/movies/${movie.id}`} >
-                          {movie.title}
-                        </Link>
-                      </CardTitle>
-                    </CardBlock>
-                  </Card>
-                </Col>
+                <li key={index}>
+                <Link to={`/movies/${movie.id}`}>
+                  {movie.title}
+                </Link>
+              </li>
+                // <Col md='4' xs='12' key={index}>
+                //   <Card block inverse color='primary'>
+                //     <CardHeader>Movie</CardHeader>
+                //     <CardBlock>
+                //       <CardTitle>
+                //         <Link to={`/movies/${movie.id}`} >
+                //           {movie.title}
+                //         </Link>
+                //       </CardTitle>
+                //     </CardBlock>
+                //   </Card>
+                // </Col>
               )
             })
           }
-          </Row>
+        </ul>
+          {/* </Row> */}
       </div>
     )
   }
