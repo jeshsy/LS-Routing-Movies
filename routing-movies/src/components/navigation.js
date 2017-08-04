@@ -34,6 +34,7 @@ class Navigation extends Component {
               </NavItem>
               <NavItem>
                 <Link className="navbuttons" to='/movies'>Movies</Link>
+
               </NavItem>
             </Nav>
           </Collapse>

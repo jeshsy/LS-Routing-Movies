@@ -1,10 +1,10 @@
+
 // import React, { Component } from 'react';
 // import { Route } from 'react-router-dom';
 // import Navigation from './components/navigation'
 // import ShowMovies from './components/showMovies';
 // import MovieDetails from './components/MovieDetails';
 // import Home from './components/home';
-
 
 
 // class App extends Component {
@@ -21,3 +21,5 @@
 //   }
 // }
 // export default App;
+
+

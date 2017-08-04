@@ -6,6 +6,7 @@ class home extends Component {
       <div className='container'>
         <div className='jumbotron text-center'>
           <h1>Hello!</h1>
+
         </div>
       </div>
     )

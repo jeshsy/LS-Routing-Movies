@@ -33,7 +33,7 @@ class MovieDetails extends Component {
               </Card>
             </center>
           </Col>
-        </Row>
+        </Row> */}
       </div>
     )
   }
